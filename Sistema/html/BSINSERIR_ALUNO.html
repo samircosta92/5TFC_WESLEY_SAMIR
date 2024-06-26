@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Incluir Aluno</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+        <link href="../css/login.css" rel="stylesheet">
+        <script src="../js/funcoes.js"></script>
+        <script type="text/javascript">
+            $("#tel").mask("(00)00000-0000");
+        </script>
+        <!-- <style>
+            .input-file-container {
+              position: relative;
+              text-align: center;
+              width: 100%;
+              padding: 10px;
+            }
+            .input-file-trigger {
+              display: inline-block;
+              padding: 10px;
+              background-color: #f0f0f0;
+              color: #333;
+              border-radius: 5px;
+              cursor: pointer;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+            }
+            .input-file {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 100;
+              cursor: pointer;
+            }
+          </style>-->
+      </head>
+<body>
+    <form class="form-signin" name="aluno" id="formAluno">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="../imagens/adicionar-usuario.png" alt="imagem de livro" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-bold">Incluir Aluno</h1>
+          </div>
+        <div class="form-label-group">
+            <input type="text"  name="nome" id="nome" class="form-control input-sm" placeholder="Nome Completo" oninput = "this.value = this.value.replace(/[^a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]/g, '');" required autofocus >
+        </div>
+        <div class="alert alert-danger" role="alert" id="respNome" style="display: none;"></div>
+        <div class="form-label-group">
+            <input maxlength="13"  id="mat" name="mat" class="form-control input-sm" placeholder="Matrícula"  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required autofocus >
+        </div>
+        <div class="alert alert-danger" role="alert" id="respMat" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="email" id="email" name="email" class="form-control input-sm" placeholder="Email" oninput="this.value = this.value.replace(/[^a-zA-Z0-9@._-]/g, '').replace(/@+/g, '@').replace(/(\.[a-z]{2,4})\.[a-z]{2,3}/g, '$1');" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respEmail" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="text" id="tel" name="tel" class="form-control input-sm" placeholder="Celular"  required autofocus >
+        </div>
+        <div class="alert alert-danger" role="alert" id="respTel" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="text"  name="curso" id="curso" class="form-control input-sm" placeholder="Curso" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respCurso" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="date" name="datanasc"  id="datanasc" class="form-control input-sm" placeholder="Data de nascimento" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respDat" style="display: none;"></div>
+        <input type="file" id="imagemUsuario" name="imagemUsuario" class="form-control input-sm input-file" required autofocus><br>
+        <div class="alert alert-danger" role="alert" id="respFile" style="display: none;"></div>
+        <button class="btn btn-lg btn-primary btn-block" type="button" name="op" id="op" onclick="enviaForm5()">Inserir Aluno</button><br>
+        <div class="alert alert-danger" role="alert" id="respostaOp" style="display: none;"></div>
+        <figure style="text-align:left">
+            <a href="BSCRUD_ALUNO.html"><img src="../imagens/voltar.png" width="50px" height="35px"></a>
+        </figure>
+        <p class="mt-5 mb-3 text-muted text-center">Samir Costa & Wesley Xavier - 5TFC - 2024.1</p>
+    </form>
+    
+</body>
+</html>

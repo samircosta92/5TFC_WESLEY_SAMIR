@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Alterar Aluno</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <link href="../css/login.css" rel="stylesheet">
+    <script src="../js/funcoes.js"></script>
+    <script type="text/javascript">
+        $("#telefone").mask("(00) 00000-0000");
+    </script>
+</head>
+<body>
+<form class="form-signin" method="post" name="aluno" id="formAluno">
+    <fieldset class="form-signin" name="id" >
+        <div class="text-center mb-4">
+            <img class="mb-4" src="../imagens/adicionar-usuario.png" alt="imagem de livro" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-bold">Digite a matrícula do aluno a ser alterado:</h1>
+        </div>
+        <input maxlength="13"  id="mat1" name="mat1" class="form-control input-sm" placeholder="Matrícula"  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required autofocus ><br>
+        <div class="alert alert-danger" role="alert" id="resposta" style="display: none;"></div>
+        <button class="btn btn-lg btn-primary btn-block" type="button" name="op" onclick="buscaAluno(this.value)">Buscar Aluno</button><br>
+    </fieldset>
+    <fieldset class="form-signin" action="" method="post" name="identificação" >
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-bold">Dados do Aluno:</h1>
+        </div>
+        <div class="form-label-group">
+            <input maxlength="13"  id="mat" name="mat" class="form-control input-sm" placeholder="Matrícula"  disabled="disabled" type="text" required autofocus>
+        </div>
+        <div class="form-label-group">
+            <input type="text"  name="nome" id="nome" class="form-control input-sm" placeholder="Nome" required autofocus >
+        </div>
+        <div class="alert alert-danger" role="alert" id="respnome" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="email" id="email" name="email" class="form-control input-sm" placeholder="Email" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respemail" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="text" id="telefone" name="telefone" class="form-control input-sm" placeholder="Celular"  required autofocus >
+        </div>
+        <div class="alert alert-danger" role="alert" id="resptel" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="text"  name="curso" id="curso" class="form-control input-sm" placeholder="Curso" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respcurso" style="display: none;"></div>
+        <div class="form-label-group">
+            <input type="date" name="datanasc"  id="datanasc" class="form-control input-sm" placeholder="Data de nascimento" required autofocus>
+        </div>
+        <div class="alert alert-danger" role="alert" id="respdat" style="display: none;"></div>
+    </fieldset> 
+    <button class="btn btn-lg btn-danger btn-block disabled" type="button" id="botaoAlterar" name="botaoAlterar" onclick="enviaForm8()" disabled>Alterar Informações </button><br>
+    <div class="alert alert-danger" role="alert" id="resposta2" style="display: none;" ></div>
+    <figure style="text-align:left">
+        <a href="BSCRUD_ALUNO.html"><img src="../imagens/voltar.png" width="50px" height="35px"></a>
+    </figure>
+    <p class="mt-5 mb-3 text-muted text-center">Samir Costa & Wesley Xavier - 5TFC - 2024.1</p>
+</form>
+
+</body>
+</html>

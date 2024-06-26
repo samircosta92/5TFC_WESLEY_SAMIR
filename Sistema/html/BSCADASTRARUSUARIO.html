@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../css/login.css" rel="stylesheet">
+    <script src="../js/funcoes.js"></script>
+</head>
+<body>
+<form class="form-signin" id="formUsuario">
+    <div class="text-center mb-4">
+        <img class="mb-4" src="../imagens/pessoa.png" alt="imagem de pessoa" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-bold">Cadastrar Usuário</h1>
+    </div>
+    <div class="form-label-group">
+        <input type="text" id="nome" name="nome" class="form-control input-sm" placeholder="Usuário" required autofocus>
+    </div>
+    <div class="alert alert-danger" role="alert" id="respUsuario" style="display: none;"></div>
+    <div class="form-label-group">
+        <input type="email" id="email" name="email" class="form-control input-sm" placeholder="Email" oninput="this.value = this.value.replace(/[^a-zA-Z0-9@._-]/g, '').replace(/@+/g, '@').replace(/(\.[a-z]{2,4})\.[a-z]{2,3}/g, '$1');" required autofocus>
+    </div>
+    <div class="alert alert-danger" role="alert" id="respEmail" style="display: none;"></div>
+    <div class="form-label-group">
+        <input type="password" id="senha" name="senha" class="form-control input-sm" placeholder="Senha" required>
+    </div>
+    <div class="alert alert-danger" role="alert" id="respSenha" style="display: none;"></div>
+    <div class="form-label-group">
+        <input type="email" id="confemail" name="confemail" class="form-control input-sm" placeholder="Confirme o email" oninput="this.value = this.value.replace(/[^a-zA-Z0-9@._-]/g, '').replace(/@+/g, '@').replace(/(\.[a-z]{2,4})\.[a-z]{2,3}/g, '$1');" required autofocus>
+    </div>
+    <div class="alert alert-danger" role="alert" id="respConfEmail" style="display: none;"></div>
+    <div class="form-label-group">
+        <input type="password" id="confsenha" name="confsenha" class="form-control input-sm" placeholder="Confirme a senha" required>
+    </div>
+    <div class="alert alert-danger" role="alert" id="respConfSenha" style="display: none;"></div>
+    <button class="btn btn-lg btn-primary btn-block" type="button" name="op" value="Confirmar" onclick="enviaCadastro()">Cadastrar</button><br>
+    <div class="alert alert-danger" role="alert" id="resposta" style="display: none;"></div>
+        <figure style="text-align:left">
+            <a href="BSLOGIN.html"><img src="../imagens/voltar.png" width="50px" height="35px"></a>
+        </figure>
+    <p class="mt-5 mb-3 text-muted text-center">Samir Costa & Wesley Xavier - 5TFC - 2024.1</p>
+</form>
+</body>
+</html>
